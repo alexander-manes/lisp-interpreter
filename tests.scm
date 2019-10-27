@@ -1,15 +1,4 @@
 ;;; Test cases for Scheme.
-;;;
-;;; In order to run only a prefix of these examples, add the line
-;;;
-;;; (exit)
-;;;
-;;; after the last test you wish to run.
-
-;;; ********************************
-;;; *** Add your own tests here! ***
-;;; ********************************
-; BEGIN PROBLEM 0
 5
 ; expect 5
 
@@ -103,8 +92,6 @@
 (dd)
 ;expect 20
 
-;;;Why does the quote add a pair
-;;;Why does lambda make args + values seperateley
 (define hello 5)
 
 (* hello 7)
@@ -112,14 +99,6 @@
 (let ((hello (* hello 3))
       (y hello)))
 ;expext 35
-; END PROBLEM 0
-
-;;; These are examples from several sections of "The Structure
-;;; and Interpretation of Computer Programs" by Abelson and Sussman.
-
-;;; License: Creative Commons share alike with attribution
-
-;;; 1.1.1
 
 10
 ; expect 10
@@ -158,12 +137,6 @@
       6))
 ; expect 57
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Move the following (exit) line down the file to run additional tests. ;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;; 1.1.2
-
 (define size 2)
 ; expect size
 size
@@ -188,7 +161,7 @@ circumference
 (square 21)
 ; expect 441
 
-(define square (lambda (x) (* x x))) ; See Section 1.3.2
+(define square (lambda (x) (* x x)))
 (square 21)
 ; expect 441
 
@@ -208,8 +181,6 @@ circumference
 (f 5)
 ; expect 136
 
-;;; 1.1.6
-
 (define (abs x)
   (cond ((> x 0) x)
         ((= x 0) 0)
@@ -227,8 +198,6 @@ circumference
   ((if (> b 0) + -) a b))
 (a-plus-abs-b 3 -2)
 ; expect 5
-
-;;; 1.1.7
 
 (define (sqrt-iter guess x)
   (if (good-enough? guess x)
@@ -255,8 +224,6 @@ circumference
 (square (sqrt 1000))
 ; expect 1000.000369924366
 
-;;; 1.1.8
-
 (define (sqrt x)
   (define (good-enough? guess)
     (< (abs (- (square guess) x)) 0.001))
@@ -278,8 +245,6 @@ circumference
 
 (square (sqrt 1000))
 ; expect 1000.000369924366
-
-;;; 1.3.1
 
 (define (cube x) (* x x x))
 (define (sum term a next b)
